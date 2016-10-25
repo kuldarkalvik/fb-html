@@ -9,8 +9,149 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Test!!</h1>
+
+    <div class="container">
+
+      <!-- Sidebar -->
+      <div class="sidebar is-open">
+        <div class="sidebar-content">
+
+          <!-- Sidebar Header -->
+          <div class="sidebar-header">
+            <a href="#" class="sidebar-logo">
+              <img src="img/logo.svg">
+            </a>
+            <a href="#" class="sidebar-close">
+              <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-217.000000, -28.000000)" fill="currentColor">
+                      <g transform="translate(32.000000, 18.000000)">
+                        <path d="M189.946429,16.9250002 L185,21.8714289 L186.978571,23.8500004 L191.925,18.9035717 L196.871429,23.8500004 L198.85,21.8714289 L193.903572,16.9250002 L198.85,11.9785715 L196.871429,10 L191.925,14.9464287 L186.978571,10 L185,11.9785715 L189.946429,16.9250002 Z" id="Close"></path>
+                      </g>
+                    </g>
+                </g>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Sidebar Navigation -->
+          <div class="sidebar-nav">
+            
+            <div class="sidebar-nav-group">
+              <a href="#" class="sidebar-nav-group-title">
+                <span class="sidebar-nav-group-icon"></span>
+                <div class="sidebar-nav-group-text">My Lists</div>
+              </a>
+              <div class="sidebar-nav-group-items" style="display:none;">
+                <a href="#" class="sidebar-nav-group-item">Funderbeam</a>
+                <a href="#" class="sidebar-nav-group-item">Transferwise</a>
+                <a href="#" class="sidebar-nav-group-item">Skype</a>
+              </div>
+            </div>
+
+            <div class="sidebar-nav-group">
+              <a href="#" class="sidebar-nav-group-title">
+                <span class="sidebar-nav-group-icon"></span>
+                <div class="sidebar-nav-group-text">My Profiles</div>
+              </a>
+              <div class="sidebar-nav-group-items" style="display:none;">
+                <a href="#" class="sidebar-nav-group-item">Elisabeth</a>
+                <a href="#" class="sidebar-nav-group-item">Funderbeam</a>
+              </div>
+            </div>
+
+            <div class="sidebar-nav-group is-active">
+              <a href="#" class="sidebar-nav-group-title">
+                <span class="sidebar-nav-group-icon"></span>
+                <div class="sidebar-nav-group-text">My Investments</div>
+              </a>
+              <div class="sidebar-nav-group-items">
+                <a href="#" class="sidebar-nav-group-item">Funderbeam</a>
+                <a href="#" class="sidebar-nav-group-item">Transferwise</a>
+                <a href="#" class="sidebar-nav-group-item">Skype</a>
+              </div>
+            </div>
+
+            <div class="sidebar-nav-group">
+              <a href="#" class="sidebar-nav-group-title">
+                <span class="sidebar-nav-group-icon"></span>
+                <div class="sidebar-nav-group-text">My Campaigns</div>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Main -->
+      <div class="main">
+
+        <!-- Header -->
+        <header class="header">
+
+          <a href="#" class="header-open is-hidden">
+            <svg width="20px" height="17px" viewBox="0 0 20 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g transform="translate(-28.000000, -27.000000)" fill="currentColor">
+                    <path d="M28,41 L48,41 L48,44 L28,44 L28,41 Z M28,34 L48,34 L48,37 L28,37 L28,34 Z M28,27 L48,27 L48,30 L28,30 L28,27 Z" id="Hamburger"></path>
+                </g>
+              </g>
+            </svg>
+          </a>
+
+          <nav class="header-nav">
+            <a href="#" class="header-nav-item">Startups</a>
+            <a href="#" class="header-nav-item">Investors</a>
+            <a href="#" class="header-nav-item">Trade</a>
+            <a href="#" class="header-nav-item">How To</a>
+          </nav>
+
+          <form class="header-search">
+            <div class="header-search-icon">
+              <svg width="19px" height="18px" viewBox="511 25 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M522.252197,25 C518.525635,25 515.502197,28.0234375 515.502197,31.75 C515.502197,33.0859375 515.880127,34.3164062 516.548096,35.3535156 L511.44165,40.4335938 C510.852783,41.0224609 510.852783,41.9804688 511.44165,42.5605469 C511.731689,42.8505859 512.109619,43 512.505127,43 C512.874268,43 513.269775,42.8505859 513.568604,42.5605469 L518.648682,37.4541016 C519.685791,38.1220703 520.91626,38.5 522.252197,38.5 C525.97876,38.5 529.002197,35.4765625 529.002197,31.75 C529.002197,28.0234375 525.97876,25 522.252197,25 L522.252197,25 Z M522.252197,36.25 C519.773682,36.25 517.752197,34.2285156 517.752197,31.75 C517.752197,29.2714844 519.773682,27.25 522.252197,27.25 C524.730713,27.25 526.752197,29.2714844 526.752197,31.75 C526.752197,34.2285156 524.730713,36.25 522.252197,36.25 L522.252197,36.25 Z" id="search" stroke="none" fill="currentColor" fill-rule="evenodd" transform="translate(520.001099, 34.000000) scale(-1, 1) translate(-520.001099, -34.000000) "></path>
+              </svg>
+            </div>
+            <input type="text" class="header-search-input">
+          </form>
+
+          <a href="#" class="user-nav">
+            <img src="img/avatar.jpg" class="user-nav-avatar">
+            <span class="user-nav-name">Elisabeth</span>
+          </a>
+        </header>
+        
+        <!-- Content -->
+        <div class="content">
+          <div class="page-header">Page header test</div>
+
+          <div class="wrapper">
+
+            <h1 class="page-h1">Investment opportunities</h1>
+
+            <!-- Page Grid Example -->
+            <div class="page-grid">
+              <div class="page-grid-item"></div>
+              <div class="page-grid-item"></div>
+              <div class="page-grid-item"></div>
+              <div class="page-grid-item"></div>
+              <div class="page-grid-item"></div>
+              <div class="page-grid-item"></div>
+              <div class="page-grid-item"></div>
+              <div class="page-grid-item"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Scripts -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="scripts.js"></script>
     <script src="http://localhost:35729/livereload.js"></script>
   </body>

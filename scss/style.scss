@@ -3,11 +3,30 @@
 /////////////
 
 // Fonts
-$main-font: 'Open Sans', sans-serif;
+// @import url(http://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700);
+
+// $main-font: 'Raleway', sans-serif;
+// $main-font: 'Gotham', sans-serif;
+$main-font: 'Montserrat', sans-serif;
+
+$letter-spacing: 0.5px;
+
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 600;
+$extrabold: 700;
 
 // Colors
-$black: #222222;
+$dark-black: #111;
+$black: #333;
 $white: #ffffff;
+
+$pink: #EC2979;
+$light-gray: #F4F4F4;
+$light-gray-2: #E2E6EC;
+$gray: #ADB4BC;
+$blue: #2188FF;
 
 // Imports
 @import 'bourbon';
@@ -17,5 +36,326 @@ $white: #ffffff;
 @import 'core/base';
 @import 'core/layout';
 
-// Partials
-// @import 'partials/header';
+/////////////////
+//  Container  //
+/////////////////
+
+.container {
+	@include display(flex);
+	letter-spacing: $letter-spacing;
+	height: 100%;
+}
+
+///////////////
+//  Sidebar  //
+///////////////
+
+$sidebar-header-height: 4.5rem;
+
+.sidebar {
+	@include transition(width 0.25s ease);
+	background-color: $dark-black;
+	width: 0;
+	overflow: hidden;
+
+	&.is-open {
+		width: 16rem;
+		.sidebar-content { opacity: 1; }
+	}
+}
+
+.sidebar-content {
+	@include transition(opacity 0.25s ease);
+	width: 16rem;
+	opacity: 0;
+}
+
+.sidebar-header {
+	@include clearfix;
+	padding: 0 1.5rem 0 2rem;
+	height: $sidebar-header-height;
+	background-color: $pink;
+}
+
+.sidebar-logo {
+	float: left;
+	margin-top: 1.125rem;
+}
+
+.sidebar-close {
+	@include display(flex);
+	@include transition(0.1s ease);
+	margin-top: 1.25rem;
+	width: 1.5rem;
+	height: 2rem;
+	float: right;
+	color: $white;
+	opacity: 0.5;
+
+	&:hover { opacity: 1; }
+
+	svg {
+		display: block;
+		margin: auto;
+	}
+}
+
+///////////////////
+//  Sidebar Nav  //
+///////////////////
+
+.sidebar-nav {}
+
+.sidebar-nav-group {
+	color: $white;
+
+	&.is-active {
+
+		.sidebar-nav-group-title {
+			background-color: $blue;
+			opacity: 1;
+		}
+
+		.sidebar-nav-group-items { opacity: 1; }
+
+	}
+}
+
+.sidebar-nav-group-title {
+	@include clearfix;
+	@include transition(opacity 0.1s ease);
+	opacity: 0.5;
+	display: block;
+	padding: 1rem 2rem;
+
+	&:hover {
+		text-decoration: none;
+		opacity: 1;
+	}
+}
+
+.sidebar-nav-group-icon {
+	display: block;
+	float: left;
+	width: 1rem;
+	height: 1rem;
+	background-color: $pink;
+	margin-right: 0.75rem;
+}
+
+.sidebar-nav-group-text {
+	float: left;
+	display: block;
+	line-height: 1rem;
+	text-transform: uppercase;
+}
+
+.sidebar-nav-group-items {
+	@include transition(opacity 0.2s ease);
+	background-color: $black;
+	padding: 0 2rem;
+	opacity: 0;
+}
+
+.sidebar-nav-group-item {
+	@include transition(opacity 0.1s ease);
+	font-weight: $light;
+	opacity: 0.5;
+	line-height: 2rem;
+	display: block;
+
+	&:first-child { padding-top: 0.75rem; }
+	&:last-child { padding-bottom: 0.75rem; }
+	&:hover {
+		text-decoration: none;
+		opacity: 1;
+	}
+}
+
+////////////
+//  Main  //
+////////////
+
+.main {
+	@include flex(1);
+}
+
+//////////////
+//  Header  //
+//////////////
+
+$header-height: 4.5rem;
+
+.header {
+	@include display(flex);
+	height: $header-height;
+	background-color: $white;
+	box-shadow: 0px 1px 4px 0px rgba($black, 0.2);
+	overflow: hidden;
+}
+
+.header-open {
+	@include transition(opacity 0.2s ease);
+	@include transition(margin 0.2s ease);
+	@include display(flex);
+	pointer-events: normal;
+	position: relative;
+	padding-left: 1.5rem;
+	color: $pink;
+
+	svg {
+		margin: auto 0;
+		display: block;
+	}
+
+	&:hover {
+		color: darken($pink, 20);
+	}
+
+	&.is-hidden {
+		margin-left: -2.75rem;
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
+//////////////////
+//  Header Nav  //
+//////////////////
+
+.header-nav {
+	@include clearfix;
+	border-right: 1px solid $light-gray-2;
+	padding-right: 1rem;
+	padding-left: 1rem;
+}
+
+.header-nav-item {
+	display: block;
+	float: left;
+	line-height: $header-height;
+	text-transform: uppercase;
+	padding: 0 1rem;
+
+	&:hover { text-decoration: none; }
+}
+
+/////////////////////
+//  Header Search  //
+/////////////////////
+
+.header-search {
+	@include flex(1);
+	position: relative;
+
+	&:hover .header-search-icon {
+		color: darken($gray, 20);
+	}
+}
+
+.header-search-icon {
+	@include transition(0.1s ease);
+	pointer-events: none;
+	position: absolute;
+	left: 1.5rem;
+	top: 1.6rem;
+	color: $gray;
+
+	svg { display: block; }
+}
+
+.header-search-input {
+	width: 100%;
+	cursor: pointer;
+	border: none;
+	line-height: 4.5rem;
+	padding: 0 0 0 4rem;
+	outline: none;
+
+	@include placeholder {
+		color: $black;
+	}
+}
+
+////////////////
+//  User Nav  //
+////////////////
+
+.user-nav {
+	@include display(flex);
+	border-left: 1px solid $light-gray-2;
+	padding: 0 1.5rem;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.user-nav-avatar {
+	margin: auto 0.75rem auto 0;
+	height: 1.75rem;
+	width: 1.75rem;
+	border-radius: 4px;
+	display: block;
+}
+
+.user-nav-name {
+	display: block;
+	margin: auto 0;
+	line-height: 1.75rem;
+}
+
+///////////////
+//  Content  //
+///////////////
+
+.content {}
+
+.wrapper {
+	padding: 2rem;
+	max-width: 72rem;
+	margin: 0 auto;
+}
+
+////////////
+//  Page  //
+////////////
+
+.page {
+	margin-top: 2rem;
+	padding: 2rem;
+	background-color: $white;
+	box-shadow: 0px 2px 3px 0px rgba($black, 0.1);
+}
+
+.page-header {
+	background-color: $white;
+	border-top: 1px solid $light-gray-2;
+	box-shadow: 0px 2px 3px 0px rgba($black, 0.1);
+	padding: 2rem;
+}
+
+.page-h1 {
+	font-size: 1.5rem;
+	font-weight: $light;
+}
+
+.page-grid {
+	@include display(flex);
+	@include flex-wrap(wrap);
+	@include justify-content(center);
+}
+
+.page-grid-item {
+	@include transition(0.2s ease);
+	width: 20rem;
+	height: 28rem;
+	background-color: $white;
+	box-shadow: 0px 2px 3px 0px rgba($black, 0.1);
+	margin: 1rem;
+
+	&:hover {
+		@include transform(translateY(-3px));
+		box-shadow: 0px 3px 4px 0px rgba($black, 0.15);
+	}
+}
