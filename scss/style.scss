@@ -112,7 +112,7 @@ $sidebar-header-height: 4.5rem;
 	&.is-active {
 
 		.sidebar-nav-group-title {
-			background-color: $blue;
+			background-color: $black;
 			opacity: 1;
 		}
 
@@ -148,6 +148,8 @@ $sidebar-header-height: 4.5rem;
 	display: block;
 	line-height: 1rem;
 	text-transform: uppercase;
+	font-size: 0.875rem;
+	font-weight: $light;
 }
 
 .sidebar-nav-group-items {
@@ -164,7 +166,6 @@ $sidebar-header-height: 4.5rem;
 	line-height: 2rem;
 	display: block;
 
-	&:first-child { padding-top: 0.75rem; }
 	&:last-child { padding-bottom: 0.75rem; }
 	&:hover {
 		text-decoration: none;
