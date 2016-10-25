@@ -1,0 +1,21 @@
+/////////////
+//  Style  //
+/////////////
+
+// Fonts
+$main-font: 'Open Sans', sans-serif;
+
+// Colors
+$black: #222222;
+$white: #ffffff;
+
+// Imports
+@import 'bourbon';
+
+// Core
+@import 'core/normalize';
+@import 'core/base';
+@import 'core/layout';
+
+// Partials
+// @import 'partials/header';

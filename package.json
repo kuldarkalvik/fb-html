@@ -1,0 +1,10 @@
+{
+	"name": "app",
+	"private": true,
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.1",
+    "node-bourbon": "^4.2.8"
+  }
+}
