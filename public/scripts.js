@@ -12,10 +12,10 @@ $(document).ready(function(){
 
 	$('.sidebar-nav-group-title').on('click', function() {
 		$('.sidebar-nav-group').removeClass('is-active');
-		$('.sidebar-nav-group').children('.sidebar-nav-group-items').slideUp(300, 'easeInOutQuad');
+		$('.sidebar-nav-group').children('.sidebar-nav-group-items').slideUp(200, 'easeInOutQuad');
 
 		$(this).parent('.sidebar-nav-group').addClass('is-active');
-		$(this).siblings('.sidebar-nav-group-items').slideDown(300, 'easeInOutQuad');
+		$(this).siblings('.sidebar-nav-group-items').slideDown(200, 'easeInOutQuad');
 
 	})
 

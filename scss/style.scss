@@ -104,46 +104,45 @@ $sidebar-header-height: 4.5rem;
 //  Sidebar Nav  //
 ///////////////////
 
-.sidebar-nav {}
+.sidebar-nav {
+	padding-top: 1rem;
+}
 
 .sidebar-nav-group {
+	@include transition(0.2s);
 	color: $white;
 
 	&.is-active {
+		background-color: $black;
 
-		.sidebar-nav-group-title {
-			background-color: $black;
-			opacity: 1;
-		}
-
+		.sidebar-nav-group-text,
+		.sidebar-nav-group-icon,
 		.sidebar-nav-group-items { opacity: 1; }
-
 	}
+
+	&:hover .sidebar-nav-group-text { opacity: 1; }
 }
 
 .sidebar-nav-group-title {
 	@include clearfix;
-	@include transition(opacity 0.1s ease);
-	opacity: 0.5;
 	display: block;
 	padding: 1rem 2rem;
-
-	&:hover {
-		text-decoration: none;
-		opacity: 1;
-	}
+	&:hover { text-decoration: none; }
 }
 
 .sidebar-nav-group-icon {
+	@include transition(0.2s);
+	opacity: 0.5;
 	display: block;
 	float: left;
 	width: 1rem;
 	height: 1rem;
-	background-color: $pink;
 	margin-right: 0.75rem;
 }
 
 .sidebar-nav-group-text {
+	@include transition(0.2s linear);
+	opacity: 0.5;
 	float: left;
 	display: block;
 	line-height: 1rem;
@@ -153,16 +152,15 @@ $sidebar-header-height: 4.5rem;
 }
 
 .sidebar-nav-group-items {
-	@include transition(opacity 0.2s ease);
-	background-color: $black;
+	@include transition(opacity 0.2s);
 	padding: 0 2rem;
 	opacity: 0;
 }
 
 .sidebar-nav-group-item {
-	@include transition(opacity 0.1s ease);
-	font-weight: $light;
+	@include transition(opacity 0.1s);
 	opacity: 0.5;
+	font-weight: $light;
 	line-height: 2rem;
 	display: block;
 
@@ -196,8 +194,7 @@ $header-height: 4.5rem;
 }
 
 .header-open {
-	@include transition(opacity 0.2s ease);
-	@include transition(margin 0.2s ease);
+	@include transition(margin 0.2s, opacity 0.2s);
 	@include display(flex);
 	pointer-events: normal;
 	position: relative;
@@ -306,15 +303,13 @@ $header-height: 4.5rem;
 	line-height: 1.75rem;
 }
 
-///////////////
-//  Content  //
-///////////////
+//////////////
+//  Center  //
+//////////////
 
-.content {}
-
-.wrapper {
-	padding: 2rem;
-	max-width: 72rem;
+.center {
+	@include clearfix;
+	max-width: 70rem;
 	margin: 0 auto;
 }
 
@@ -323,10 +318,10 @@ $header-height: 4.5rem;
 ////////////
 
 .page {
-	margin-top: 2rem;
-	padding: 2rem;
-	background-color: $white;
-	box-shadow: 0px 2px 3px 0px rgba($black, 0.1);
+	// margin-top: 2rem;
+	// padding: 2rem;
+	// background-color: $white;
+	// box-shadow: 0px 2px 3px 0px rgba($black, 0.1);
 }
 
 .page-header {
@@ -336,9 +331,33 @@ $header-height: 4.5rem;
 	padding: 2rem;
 }
 
-.page-h1 {
-	font-size: 1.5rem;
-	font-weight: $light;
+.page-nav {
+	@include clearfix;
+	background-color: $white;
+	border-top: 1px solid $light-gray-2;
+	box-shadow: 0px 2px 3px 0px rgba($black, 0.1);
+	padding: 0 2rem;	
+}
+
+.page-nav-item {
+	float: left;
+	display: block;
+	padding: 1.25rem 0;
+	margin: 0 1rem;
+
+	&.is-active,
+	&.is-active:hover {
+		box-shadow: inset 0 -3px 0 $pink;
+	}
+
+	&:hover {
+		text-decoration: none;
+		box-shadow: inset 0 -3px 0 $pink;
+	}
+}
+
+.page-content {
+	padding: 2rem 0;
 }
 
 .page-grid {
