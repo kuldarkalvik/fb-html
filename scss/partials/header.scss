@@ -1,0 +1,95 @@
+//////////////
+//  Header  //
+//////////////
+
+$header-height: 4.5rem;
+
+.header {
+	@include display(flex);
+	height: $header-height;
+	background-color: $white;
+	box-shadow: 0px 1px 4px 0px rgba($black, 0.2);
+	overflow: hidden;
+}
+
+.header-open {
+	@include transition(margin 0.2s, opacity 0.2s);
+	@include display(flex);
+	pointer-events: normal;
+	position: relative;
+	padding-left: 1.5rem;
+	color: $pink;
+
+	svg {
+		margin: auto 0;
+		display: block;
+	}
+
+	&:hover {
+		color: darken($pink, 20);
+	}
+
+	&.is-hidden {
+		margin-left: -2.75rem;
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
+//////////////////
+//  Header Nav  //
+//////////////////
+
+.header-nav {
+	@include clearfix;
+	border-right: 1px solid $light-gray-2;
+	padding-right: 1rem;
+	padding-left: 1rem;
+}
+
+.header-nav-item {
+	display: block;
+	float: left;
+	line-height: $header-height;
+	text-transform: uppercase;
+	padding: 0 1rem;
+
+	&:hover { text-decoration: none; }
+}
+
+/////////////////////
+//  Header Search  //
+/////////////////////
+
+.header-search {
+	@include flex(1);
+	position: relative;
+
+	&:hover .header-search-icon {
+		color: darken($gray, 20);
+	}
+}
+
+.header-search-icon {
+	@include transition(0.1s ease);
+	pointer-events: none;
+	position: absolute;
+	left: 1.5rem;
+	top: 1.6rem;
+	color: $gray;
+
+	svg { display: block; }
+}
+
+.header-search-input {
+	width: 100%;
+	cursor: pointer;
+	border: none;
+	line-height: 4.5rem;
+	padding: 0 0 0 4rem;
+	outline: none;
+
+	@include placeholder {
+		color: $black;
+	}
+}

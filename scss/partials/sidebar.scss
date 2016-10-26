@@ -1,0 +1,124 @@
+///////////////
+//  Sidebar  //
+///////////////
+
+$sidebar-header-height: 4.5rem;
+
+.sidebar {
+	@include transition(width 0.25s ease);
+	background-color: $dark-black;
+	width: 0;
+	overflow: hidden;
+
+	&.is-open {
+		width: 16rem;
+		.sidebar-content { opacity: 1; }
+	}
+}
+
+.sidebar-content {
+	@include transition(opacity 0.25s ease);
+	width: 16rem;
+	opacity: 0;
+}
+
+.sidebar-header {
+	@include clearfix;
+	padding: 0 1.5rem 0 2rem;
+	height: $sidebar-header-height;
+	background-color: $pink;
+}
+
+.sidebar-logo {
+	float: left;
+	margin-top: 1.125rem;
+}
+
+.sidebar-close {
+	@include display(flex);
+	@include transition(0.1s ease);
+	margin-top: 1.25rem;
+	width: 1.5rem;
+	height: 2rem;
+	float: right;
+	color: $white;
+	opacity: 0.5;
+
+	&:hover { opacity: 1; }
+
+	svg {
+		display: block;
+		margin: auto;
+	}
+}
+
+///////////////////
+//  Sidebar Nav  //
+///////////////////
+
+.sidebar-nav {
+	padding-top: 1rem;
+}
+
+.sidebar-nav-group {
+	@include transition(0.2s);
+	color: $white;
+
+	&.is-active {
+		background-color: $black;
+
+		.sidebar-nav-group-text,
+		.sidebar-nav-group-icon,
+		.sidebar-nav-group-items { opacity: 1; }
+	}
+
+	&:hover .sidebar-nav-group-text { opacity: 1; }
+}
+
+.sidebar-nav-group-title {
+	@include clearfix;
+	display: block;
+	padding: 1rem 2rem;
+	&:hover { text-decoration: none; }
+}
+
+.sidebar-nav-group-icon {
+	@include transition(0.2s);
+	opacity: 0.5;
+	display: block;
+	float: left;
+	width: 1rem;
+	height: 1rem;
+	margin-right: 0.75rem;
+}
+
+.sidebar-nav-group-text {
+	@include transition(0.2s linear);
+	opacity: 0.5;
+	float: left;
+	display: block;
+	line-height: 1rem;
+	text-transform: uppercase;
+	font-size: 0.875rem;
+	font-weight: $light;
+}
+
+.sidebar-nav-group-items {
+	@include transition(opacity 0.2s);
+	padding: 0 2rem;
+	opacity: 0;
+}
+
+.sidebar-nav-group-item {
+	@include transition(opacity 0.1s);
+	opacity: 0.5;
+	font-weight: $light;
+	line-height: 2rem;
+	display: block;
+
+	&:last-child { padding-bottom: 0.75rem; }
+	&:hover {
+		text-decoration: none;
+		opacity: 1;
+	}
+}

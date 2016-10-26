@@ -7,3 +7,21 @@
     @content;
   }
 }
+
+// Container
+.container {
+	@include display(flex);
+	height: 100%;
+}
+
+// Main
+.main {
+	@include flex(1);
+}
+
+// Center
+.center {
+	@include clearfix;
+	max-width: 70rem;
+	margin: 0 auto;
+}
