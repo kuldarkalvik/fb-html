@@ -28,43 +28,44 @@ $light-gray-2: #E2E6EC;
 $gray: #ADB4BC;
 $blue: #2188FF;
 
+// Shadow
+$shadow: 0px 2px 3px 0px rgba($black, 0.1);
+
+// Sizes
+$header-height: 4.5rem;
+$sidebar-width: 18rem;
+
 // Imports
 @import 'bourbon';
 
 // Core
 @import 'core/normalize';
+@import 'core/helpers';
 @import 'core/base';
-@import 'core/layout';
 
 // Partials
 @import 'partials/sidebar';
 @import 'partials/header';
 @import 'partials/page';
 
-////////////////
-//  User Nav  //
-////////////////
+// Container
+.container {
+	@include transition(margin 0.25s ease);
+	position: relative;
+	margin-left: $sidebar-width;
 
-.user-nav {
-	@include display(flex);
-	border-left: 1px solid $light-gray-2;
-	padding: 0 1.5rem;
-
-	&:hover {
-		text-decoration: none;
+	&.is-full {
+		margin-left: 0;
+		.page-nav.is-fixed { width: 100%; }
 	}
 }
 
-.user-nav-avatar {
-	margin: auto 0.75rem auto 0;
-	height: 1.75rem;
-	width: 1.75rem;
-	border-radius: 4px;
-	display: block;
-}
+// Main
+.main {}
 
-.user-nav-name {
-	display: block;
-	margin: auto 0;
-	line-height: 1.75rem;
+// Center
+.center {
+	@include clearfix;
+	max-width: 70rem;
+	margin: 0 auto;
 }

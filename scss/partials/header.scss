@@ -2,13 +2,11 @@
 //  Header  //
 //////////////
 
-$header-height: 4.5rem;
-
 .header {
 	@include display(flex);
 	height: $header-height;
 	background-color: $white;
-	box-shadow: 0px 1px 4px 0px rgba($black, 0.2);
+	box-shadow: $shadow;
 	overflow: hidden;
 }
 
@@ -57,6 +55,11 @@ $header-height: 4.5rem;
 	&:hover { text-decoration: none; }
 }
 
+.header-nav-item-icon {
+	color: $gray;
+	margin-left: 0.5rem;
+}
+
 /////////////////////
 //  Header Search  //
 /////////////////////
@@ -92,4 +95,37 @@ $header-height: 4.5rem;
 	@include placeholder {
 		color: $black;
 	}
+}
+
+///////////////////////
+//  Header User Nav  //
+///////////////////////
+
+.header-user-nav {
+	@include display(flex);
+	border-left: 1px solid $light-gray-2;
+	padding: 0 1.5rem;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.header-user-nav-avatar {
+	margin: auto 0.75rem auto 0;
+	height: 1.75rem;
+	width: 1.75rem;
+	border-radius: 4px;
+	display: block;
+}
+
+.header-user-nav-name {
+	display: block;
+	margin: auto 0;
+	line-height: 1.75rem;
+}
+
+.header-user-nav-icon {
+	margin: auto 0 auto 0.5rem;
+	color: $gray;
 }

@@ -2,30 +2,39 @@
 //  Sidebar  //
 ///////////////
 
-$sidebar-header-height: 4.5rem;
-
 .sidebar {
 	@include transition(width 0.25s ease);
-	background-color: $dark-black;
-	width: 0;
-	overflow: hidden;
+	position: fixed;
+  width: 0;
+  background-color: $dark-black;
+  overflow-y: scroll;
+  left: 0;
+  top: 0;
+  bottom: 0;
 
-	&.is-open {
-		width: 16rem;
-		.sidebar-content { opacity: 1; }
-	}
+  &.is-open {
+  	width: $sidebar-width;
+  	.sidebar-content { opacity: 1; }
+  }
 }
 
 .sidebar-content {
 	@include transition(opacity 0.25s ease);
-	width: 16rem;
+	position: relative;
+	min-height: 100%;
+	width: $sidebar-width;
 	opacity: 0;
+	padding-bottom: 5rem;
 }
+
+//////////////////////
+//  Sidebar Header  //
+//////////////////////
 
 .sidebar-header {
 	@include clearfix;
 	padding: 0 1.5rem 0 2rem;
-	height: $sidebar-header-height;
+	height: $header-height;
 	background-color: $pink;
 }
 
@@ -70,6 +79,7 @@ $sidebar-header-height: 4.5rem;
 		.sidebar-nav-group-text,
 		.sidebar-nav-group-icon,
 		.sidebar-nav-group-items { opacity: 1; }
+		.sidebar-nav-group-icon { color: $pink; }
 	}
 
 	&:hover .sidebar-nav-group-text { opacity: 1; }
@@ -84,7 +94,8 @@ $sidebar-header-height: 4.5rem;
 
 .sidebar-nav-group-icon {
 	@include transition(0.2s);
-	opacity: 0.5;
+	color: $white;
+	opacity: 0.25;
 	display: block;
 	float: left;
 	width: 1rem;
@@ -120,5 +131,69 @@ $sidebar-header-height: 4.5rem;
 	&:hover {
 		text-decoration: none;
 		opacity: 1;
+	}
+}
+
+////////////////////
+//  Sidebar User  //
+////////////////////
+
+.sidebar-user-wrapper {
+	position: fixed;
+	bottom: 0;
+	width: $sidebar-width;
+	background-color: $black;
+
+	box-shadow: 0px -2px 3px 0px rgba($dark-black, 0.5);
+}
+
+.sidebar-user {
+	@include clearfix;
+	display: block;
+	padding: 1rem 2rem;
+	color: $white;
+}
+
+.sidebar-user-avatar {
+	float: left;
+	height: 1.75rem;
+	width: 1.75rem;
+	border-radius: 4px;
+	display: block;
+	margin-right: 0.75rem;
+}
+
+.sidebar-user-name {
+	float: left;
+	font-weight: $light;
+	line-height: 1.75rem;
+}
+
+.sidebar-user-icon {
+	float: right;
+	opacity: 0.5;
+	margin-top: 0.5rem;
+}
+
+.sidebar-user-nav {
+	@include transition(opacity 0.2s);
+	padding-bottom: 1.5rem;
+	opacity: 0;
+
+	&.is-open { opacity: 1; }
+}
+
+.sidebar-user-nav-item {
+	@include transition(0.1s);
+	color: white;
+	font-weight: $light;
+	opacity: 0.5;
+	display: block;
+	padding: 0 2rem;
+	line-height: 2rem;
+
+	&:hover {
+		opacity: 1;
+		text-decoration: none;
 	}
 }
